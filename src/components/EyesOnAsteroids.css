@@ -1,0 +1,73 @@
+.eoa-root { width: 100vw; height: 100vh; position: relative; }
+
+.overlay { width: 100vw; height: 100vh; background: black; display: flex; align-items: center; justify-content: center; color: white; font-family: Arial, sans-serif; font-size: 18px; gap: 12px; flex-direction: column; }
+.overlay--error { color: #ff6b6b; }
+.overlay--loading { color: #ffffff; }
+
+.btn { padding: 6px 10px; background: #333; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+.btn:hover { background: #3c3c3c; }
+.btn--primary { background: #2962ff; }
+.btn--primary:hover { background: #1e4fe0; }
+.btn--accent { background: #2a5; }
+.btn--accent:hover { background: #238e45; }
+
+.time-overlay { position: absolute; bottom: 70px; left: 50%; transform: translateX(-50%); background: rgba(0, 0, 0, 0.8); color: white; padding: 8px 10px; border-radius: 10px; font-family: Arial, sans-serif; font-size: 14px; text-align: center; }
+
+.time-controls { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: #fff; padding: 10px 12px; border-radius: 10px; display: flex; gap: 10px; align-items: center; font-family: Arial, sans-serif; }
+.time-controls.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+.time-controls.is-hidden { opacity: 0; transform: translateX(-50%) translateY(10px); pointer-events: none; }
+.time-controls { transition: opacity 220ms ease, transform 220ms ease; }
+/* Nueva disposición elegantes para time-controls */
+.time-controls.time-controls--compact { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: auto; }
+.tc-badge { background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 6px 10px; text-align: center; }
+.tc-badge div { line-height: 1.2; }
+.tc-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+/* Nueva grilla compacta de 3 columnas */
+.tc-grid { display: grid; grid-template-columns: repeat(3, auto); gap: 10px 18px; align-items: center; margin-top: 2px; }
+.tc-col { display: grid; grid-auto-rows: min-content; gap: 6px; justify-items: center; }
+.tc-col--left .speed-label { white-space: nowrap; }
+.tc-col--right .dir-label { white-space: nowrap; }
+.tc-col .btn, .tc-col .panel-close { width: 132px; text-align: center; }
+.tc-col .panel-close { padding: 6px 10px; }
+.btn--danger-outline { background: transparent; border: 2px solid #e74c3c; color: #fff; }
+.btn--danger-outline:hover { background: rgba(231,76,60,0.12); }
+.time-controls .speed-label, .time-controls .dir-label { font-size: 12px; color: #bbb; }
+
+@media (max-width: 700px) {
+		.time-controls.time-controls--compact { min-width: auto; }
+		.tc-row { gap: 4px; }
+		.tc-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px 10px; }
+		.tc-col .btn, .tc-col .panel-close { width: 100%; }
+}
+/* Botón cerrar dentro de paneles */
+.panel-close { background: transparent; color: #bbb; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; padding: 4px 8px; cursor: pointer; margin-bottom: 8px; }
+.panel-close:hover { color: #fff; border-color: rgba(255,255,255,0.45); }
+
+.speed-label { font-size: 12px; color: #bbb; }
+.dir-label { font-size: 12px; color: #bbb; }
+
+/* Panels */
+.panel { position: absolute; top: 20px; background: rgba(0,0,0,0.8); color: #fff; padding: 16px; border-radius: 10px; font-family: Arial, sans-serif; font-size: 14px; max-width: 320px; }
+.panel--left { left: 20px; }
+.panel.is-hidden { opacity: 0; transform: translateY(-8px); pointer-events: none; }
+.panel.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.panel { transition: opacity 220ms ease, transform 220ms ease; }
+.panel--right { right: 20px; max-width: 300px; }
+.title { margin: 0 0 10px 0; }
+.title--pha { color: #ff4444; }
+.stat-line { margin: 0 0 6px 0; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.check { display: flex; align-items: center; gap: 8px; }
+.separator { margin: 12px 0; border-top: 1px solid rgba(255,255,255,0.8); }
+.grid { display: grid; gap: 10px; }
+.legend { font-size: 12px; color: #bbb; margin-top: 10px; }
+.legend p { margin: 0; }
+.pha { color: #ff4444; }
+.neo { color: #888888; }
+
+/* Barra de toggles superior derecha */
+/* Botones para revelar cuando están ocultos */
+.reveal-btn { position: absolute; z-index: 10; background: rgba(0,0,0,0.75); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 13px; }
+.reveal-btn:hover { background: rgba(0,0,0,0.85); border-color: rgba(255,255,255,0.45); }
+.reveal-btn--left { top: 20px; left: 20px; }
+.reveal-btn--bottom { bottom: 20px; left: 50%; transform: translateX(-50%); }
