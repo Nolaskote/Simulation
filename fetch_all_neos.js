@@ -1,6 +1,6 @@
 // fetch_all_neos.js
-const fs = require("fs");
-const https = require("https");
+import fs from "fs";
+import https from "https";
 
 const API_KEY = "FgQdqLRDLps8aBoZyeM9zSPKcyObPvbDcXomch5k";
 const PAGE_SIZE = 20;
