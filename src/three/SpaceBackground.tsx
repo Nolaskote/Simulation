@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { TextureLoader, EquirectangularReflectionMapping, SRGBColorSpace, Texture, Color } from 'three';
+import { asset } from '../utils/asset';
 import { useThree } from '@react-three/fiber';
 
 export default function SpaceBackground() {
@@ -17,7 +18,7 @@ export default function SpaceBackground() {
 
     // 1) Load the user-provided JPG first
     loader.load(
-      '/textures/space.png',
+      asset('textures/space.png'),
       set,
       undefined,
     );

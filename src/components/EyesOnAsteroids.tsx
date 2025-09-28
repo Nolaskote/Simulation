@@ -7,6 +7,7 @@ import { TimeState, createInitialTimeState, dateToJulianDay } from '../utils/tim
 import './EyesOnAsteroids.css';
 import './responsive.css';
 import LoadingScreen from './LoadingScreen';
+import { asset } from '../utils/asset';
 import AsteroidInfo from './AsteroidInfo.tsx';
 import StatsAndControls from './StatsAndControls.tsx';
 
@@ -20,7 +21,7 @@ const useNEOSData = () => {
     try {
       setError(null);
       setLoading(true);
-      const response = await fetch('/data/neos.json', { cache: 'no-cache' });
+  const response = await fetch(asset('data/neos.json'), { cache: 'no-cache' });
       if (!response.ok) {
         throw new Error('Failed to load NEO data');
       }

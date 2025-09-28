@@ -10,12 +10,13 @@ import { TimeState, getTimeInDays, J2000_EPOCH, julianDayToDate } from "../utils
 import TimeTicker from './TimeTicker';
 import SpaceBackground from './SpaceBackground';
 import { AU_TO_UNITS } from "../utils/constants";
+import { asset } from "../utils/asset";
 
 // Datos reales del sistema solar con escalas apropiadas
 const PLANETS = [
   {
     name: "Mercury",
-    texture: "/textures/mercury.jpg",
+  texture: asset("textures/mercury.jpg"),
     size: 0.38,
     distance: 5.8, // UA real: 0.387, escalado para visualización
     rotation: 58.6,
@@ -30,7 +31,7 @@ const PLANETS = [
   },
   {
     name: "Venus",
-    texture: "/textures/venus.jpg",
+  texture: asset("textures/venus.jpg"),
     size: 0.95,
     distance: 10.8, // UA real: 0.723
     rotation: -243,
@@ -44,7 +45,7 @@ const PLANETS = [
   },
   {
     name: "Earth",
-    texture: "/textures/earth.jpg",
+  texture: asset("textures/earth.jpg"),
     size: 1,
     distance: 15, // UA real: 1.0
     rotation: 1,
@@ -58,7 +59,7 @@ const PLANETS = [
   },
   {
     name: "Mars",
-    texture: "/textures/mars.jpg",
+  texture: asset("textures/mars.jpg"),
     size: 0.53,
     distance: 22.8, // UA real: 1.524
     rotation: 1.03,
@@ -72,7 +73,7 @@ const PLANETS = [
   },
   {
     name: "Jupiter",
-    texture: "/textures/jupiter.jpg",
+  texture: asset("textures/jupiter.jpg"),
     size: 11.2,
     distance: 77.8, // UA real: 5.203
     rotation: 0.41,
@@ -86,7 +87,7 @@ const PLANETS = [
   },
   {
     name: "Saturn",
-    texture: "/textures/saturn.jpg",
+  texture: asset("textures/saturn.jpg"),
     size: 9.45,
     distance: 143, // UA real: 9.537
     rotation: 0.45,
@@ -98,11 +99,11 @@ const PLANETS = [
     argumentPerihelion: 339.4,
     meanAnomaly: 50.1,
     hasRings: true,
-    ringTexture: "/textures/saturn_ring.png",
+  ringTexture: asset("textures/saturn_ring.png"),
   },
   {
     name: "Uranus",
-    texture: "/textures/uranus.jpg",
+  texture: asset("textures/uranus.jpg"),
     size: 4.0,
     distance: 287, // UA real: 19.191
     rotation: -0.72,
@@ -116,7 +117,7 @@ const PLANETS = [
   },
   {
     name: "Neptune",
-    texture: "/textures/neptune.jpg",
+  texture: asset("textures/neptune.jpg"),
     size: 3.88,
     distance: 450, // UA real: 30.069
     rotation: 0.67,
@@ -342,7 +343,7 @@ export default function SolarSystem({
       )}>
         <Planet
           name="Sun"
-          texture="/textures/sun.jpg"
+          texture={asset("textures/sun.jpg")}
           size={8}
           distance={0}
           rotation={25}

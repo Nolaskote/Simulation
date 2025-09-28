@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Environment } from '@react-three/drei';
+import { asset } from '../utils/asset';
 
 export default function EnvLoader() {
   const [hdrPath, setHdrPath] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    const candidate = '/textures/space.hdr';
+  const candidate = asset('textures/space.hdr');
     fetch(candidate, { method: 'HEAD' })
       .then((res) => {
         if (cancelled) return;

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './loading.css';
+import { asset } from '../utils/asset';
 
 interface LoadingScreenProps {
   minDurationMs?: number; // default 5000
@@ -50,11 +51,11 @@ export default function LoadingScreen({ minDurationMs = 5000, ready, onComplete,
 
   return (
     <div className={`loader-root ${fading ? 'is-fading' : ''}`}>
-      <div className="loader-bg" />
+  <div className="loader-bg" style={{ backgroundImage: `url(${asset('textures/meteoro_tierra.jpg')})` }} />
       <div className="loader-content">
         <div className="loader-ring" style={{ ['--p' as any]: `${pct}` }}>
           <div className="loader-logo">
-            <img src="/textures/neoscience.jpeg" alt="NeoScience" />
+            <img src={asset('textures/neoscience.jpeg')} alt="NeoScience" />
           </div>
         </div>
         <div className="loader-percent">{pct}%</div>
