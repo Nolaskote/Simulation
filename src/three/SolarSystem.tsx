@@ -539,7 +539,7 @@ export default function SolarSystem({
         enableRotate={true}
         autoRotate={false}
         maxDistance={5000}
-        minDistance={30}
+        minDistance={10}
         maxPolarAngle={Math.PI}
         minPolarAngle={0}
         enableDamping={true}
